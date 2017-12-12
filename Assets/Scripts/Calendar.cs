@@ -13,7 +13,8 @@ public class Calendar : MonoBehaviour {
 
 	Block[] blocks;
 
-	void Start() {
+	void Start() 
+    {
         StartCoroutine(CaptureCalendar());
     }
 
@@ -76,7 +77,8 @@ public class Calendar : MonoBehaviour {
 
     void ScreenCap(int index)
     {
-        ScreenCapture.CaptureScreenshot("Assets/ScreenCaps/Month("+index+").png", 3);
+        string month = months.Split(' ')[index];
+        ScreenCapture.CaptureScreenshot(string.Format("Assets/ScreenCaps/{0}.{1}.png",index+1,month), 3);
     }
 
 
